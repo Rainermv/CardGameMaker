@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9787A0D8-C502-4E0F-92C2-F706CF85F7BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CGM</RootNamespace>
+    <AssemblyName>CGM</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Info\AssemblyInfo.cs" />
+    <Compile Include="SerialNode.cs" />
+    <Compile Include="Views\ResourceView.cs" />
+    <Compile Include="Views\ComponentWrapper.cs" />
+    <Compile Include="Views\TextMeshWrapper.cs" />
+    <Compile Include="Physical\Deck.cs" />
+    <Compile Include="Physical\Card.cs" />
+    <Compile Include="Physical\Resource.cs" />
+    <Compile Include="Physical\Player.cs" />
+    <Compile Include="Logical\Action.cs" />
+    <Compile Include="Logical\Phase.cs" />
+    <Compile Include="GAme\Game.cs" />
+    <Compile Include="GAme\GameManager.cs" />
+    <Compile Include="GAme\CGMObject.cs" />
+    <Compile Include="Views\CGMView.cs" />
+    <Compile Include="LibNode.cs" />
+    <Compile Include="Physical\Button.cs" />
+    <Compile Include="Interface\PopUpWindow.cs" />
+    <Compile Include="Interface\InterfaceEvent.cs" />
+    <Compile Include="CardTypeConfig.cs" />
+    <Compile Include="Logical\ActionWrapper.cs" />
+    <Compile Include="Logical\CustomAction.cs" />
+    <Compile Include="Physical\CardDisposition.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CGME\CGM Engine.csproj">
+      <Project>{02B72D50-DE31-4404-888E-8D29F21553DC}</Project>
+      <Name>CGM Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Info\" />
+    <Folder Include="Views\" />
+    <Folder Include="Physical\" />
+    <Folder Include="Logical\" />
+    <Folder Include="GAme\" />
+    <Folder Include="Interface\" />
+  </ItemGroup>
+</Project>

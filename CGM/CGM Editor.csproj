@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{280AAF52-0DE3-40DB-9E0F-3BD8DB40D78C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CGMEditor</RootNamespace>
+    <AssemblyName>CGM Editor</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Inspector\ResourceInspector.cs" />
+    <Compile Include="Inspector\DeckInspector.cs" />
+    <Compile Include="Inspector\PlayerInspector.cs" />
+    <Compile Include="Inspector\GameInspector.cs" />
+    <Compile Include="Window\WindowCardMaker.cs" />
+    <Compile Include="Inspector\ActionInspector.cs" />
+    <Compile Include="Inspector\GameManagerInspector.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="Inspector\PhaseInspector.cs" />
+    <Compile Include="Inspector\CardInspector.cs" />
+    <Compile Include="Inspector\ButtonInspector.cs" />
+    <Compile Include="Window\Action\WindowActionEditor.cs" />
+    <Compile Include="Window\Action\NodeLevelCounter.cs" />
+    <Compile Include="Window\Action\Action Node\ActionEditorNode.cs" />
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeGroup.cs" />
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeSelect.cs">
+      <DependentUpon>ActionEditorNodeGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeTransfer.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeDestroyObject.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeModifyResource.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeCompareResource.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeCompareParents.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeComparable.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeObjectValid.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\ActionEditorPopupWindow.cs" />
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeBufferSave.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeBufferLoad.cs">
+      <DependentUpon>ActionEditorNodeGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\Action Node\ActionEditorNodeBufferSize.cs">
+      <DependentUpon>ActionEditorNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Action\WindowActionNode.cs" />
+    <Compile Include="Inspector\CGMObjectInspector.cs" />
+    <Compile Include="CGMWizard.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CGMEU\CGM.csproj">
+      <Project>{9787A0D8-C502-4E0F-92C2-F706CF85F7BE}</Project>
+      <Name>CGM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CGME\CGM Engine.csproj">
+      <Project>{02B72D50-DE31-4404-888E-8D29F21553DC}</Project>
+      <Name>CGM Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Inspector\" />
+    <Folder Include="Window\" />
+    <Folder Include="Window\Action\" />
+    <Folder Include="Window\Action\Action Node\" />
+  </ItemGroup>
+</Project>

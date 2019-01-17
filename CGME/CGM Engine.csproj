@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02B72D50-DE31-4404-888E-8D29F21553DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CGME</RootNamespace>
+    <AssemblyName>CGM Engine</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Execute" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\..\..\..\..\..\Projects\Cycle\Assets</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actor\Actor.cs" />
+    <Compile Include="Action\Action.cs" />
+    <Compile Include="Action\ActionGroup.cs" />
+    <Compile Include="Action\SingleEffect\ActionEndGame.cs" />
+    <Compile Include="Action\SingleEffect\ActionEndPhase.cs" />
+    <Compile Include="Info\AssemblyInfo.cs" />
+    <Compile Include="Physical\Card.cs" />
+    <Compile Include="Physical\Deck.cs" />
+    <Compile Include="Physical\Player.cs" />
+    <Compile Include="Physical\Resource\Resource.cs" />
+    <Compile Include="Physical\Resource\ResourceNumber.cs" />
+    <Compile Include="Physical\Resource\ResourceText.cs" />
+    <Compile Include="Physical\Resource\ResourceBool.cs" />
+    <Compile Include="Physical\Resource\ResourceAction.cs" />
+    <Compile Include="ActionDictionary.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameManager.cs" />
+    <Compile Include="c:\Rainer\JEDI\Projeto Final\Card Game Maker\Project\trunk\CGME\Action\Condition\ActionGroupConditionTargetable.cs" />
+    <Compile Include="CGFactory.cs" />
+    <Compile Include="Game\CGObject.cs" />
+    <Compile Include="c:\Rainer\JEDI\Projeto Final\Card Game Maker\Project\trunk\CGME\Action\Targetable\ActionTransferActor.cs" />
+    <Compile Include="Action\ActionSelect.cs" />
+    <Compile Include="Action\ActionArm.cs" />
+    <Compile Include="Action\ActionModifyResource.cs" />
+    <Compile Include="CGLibrary.cs" />
+    <Compile Include="Action\ActionIfThenElse.cs" />
+    <Compile Include="Action\ActionTransferObject.cs" />
+    <Compile Include="Logical\IActionEventListener.cs" />
+    <Compile Include="Logical\IEngineListener.cs" />
+    <Compile Include="Game\Phase.cs" />
+    <Compile Include="Action\Condition\ActionConditionCompareResource.cs" />
+    <Compile Include="Action\Condition\ActionConditionComparable.cs" />
+    <Compile Include="Action\Condition\ActionConditionCompareParent.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Enums\ResourceSource.cs" />
+    <Compile Include="Enums\CustomActionEvent.cs" />
+    <Compile Include="Enums\EngineEvent.cs" />
+    <Compile Include="Enums\SelectionMode.cs" />
+    <Compile Include="Enums\SelectionSource.cs" />
+    <Compile Include="Enums\BinaryComparison.cs" />
+    <Compile Include="Action\ActionDestroyObject.cs" />
+    <Compile Include="Action\Condition\ActionConditionIsValid.cs" />
+    <Compile Include="Action\ActionBufferSave.cs" />
+    <Compile Include="Action\ActionBufferLoad.cs" />
+    <Compile Include="Action\ActionBufferClear.cs" />
+    <Compile Include="Action\Condition\ActionConditionBufferSize.cs" />
+    <Compile Include="Actor\ResourceableObject.cs" />
+    <Compile Include="Action\ActionEvent.cs" />
+    <Compile Include="Action\ActionShuffle.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="CGM Engine.userprefs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Game\" />
+    <Folder Include="Actor\" />
+    <Folder Include="Action\SingleEffect\" />
+    <Folder Include="Action\Condition\" />
+    <Folder Include="Info\" />
+    <Folder Include="Logical\" />
+    <Folder Include="Physical\" />
+    <Folder Include="Physical\Resource\" />
+    <Folder Include="Enums\" />
+  </ItemGroup>
+</Project>
